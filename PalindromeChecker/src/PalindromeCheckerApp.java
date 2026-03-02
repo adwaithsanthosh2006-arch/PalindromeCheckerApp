@@ -1,27 +1,36 @@
+
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
 
         // Hardcoded string (String Literal)
         String word = "madam";
 
-        // Convert string to character array
-        char[] characters = word.toCharArray();
+        // Create a Stack to store characters
+        Stack<Character> stack = new Stack<>();
 
-        // Two-pointer approach
-        int start = 0;
-        int end = characters.length - 1;
+        // Push characters into stack
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
+        }
 
         boolean isPalindrome = true;
 
-        // Compare start and end characters
-        while (start < end) {
-            if (characters[start] != characters[end]) {
+        // Pop characters from stack and compare
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
+
+        // Print result
+        if (isPalindrome) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
+        }
+    }
+}
 
         // Display result
         if (isPalindrome) {
