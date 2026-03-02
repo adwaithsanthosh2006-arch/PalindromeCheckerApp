@@ -1,11 +1,22 @@
-/*
- *this system is going to print welcome to the PalindromeCheckerApp
- * @Version 1.0
- */
-
 public class PalindromeCheckerApp {
-    public static void main(String[]args){
-        System.out.println(" welcome to the PalindromeCheckerApp");
-        System.out.println("Version : 1.0");
+    public static void main(String[] args) {
+
+        // Hardcoded string (String Literal)
+        String word = "madam";
+
+        // Variable to store reversed string
+        String reversed = "";
+
+        // Reverse the string
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        // Check if palindrome using conditional statement
+        if (word.equals(reversed)) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
+        }
     }
 }
